@@ -1,0 +1,4 @@
+"Name","OperatingSystem","OperatingSystemVersion","ipv4Address"
+"LON-DC1","Windows Server 2019 Datacenter Evaluation","10.0 (17763)","172.16.0.10"
+"LON-SVR1","Windows Server 2019 Datacenter Evaluation","10.0 (17763)","172.16.0.11"
+"LON-CL1","Windows 10 Enterprise","10.0 (19045)","172.16.0.12"
