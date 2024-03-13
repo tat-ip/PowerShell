@@ -4,9 +4,12 @@
 # Note: You need to have appropriate permissions to query user accounts.
 
 # Get a list of expired user accounts
-Get-ADUser -Filter {Enabled -eq $true -and AccountExpirationDate -lt (Get-Date)} | Select-Object Name, SamAccountName, AccountExpirationDate
 
-Get-AdUser -Filter * -Properties Enabled,AccountExpirationDate | Where {$PSItem.Enabled -eq $true -and $PSItem.AccountExpirationDate -lt (Get-Date)} | Select-Object Name, SamAccountName, AccountExpirationDate
+$Cutoff = Read-Host -Prompt "Enter expiration Cutoff Date"
+
+#Get-AdUser -Filter * -Properties Enabled,AccountExpirationDate,accountExpires | Where {$PSItem.Enabled -eq $true -and $PSItem.AccountExpirationDate -lt $Cutoff} | Select-Object Name, SamAccountName, AccountExpirationDate
+
+Get-ADUser -Filter {Enabled -eq $true -and  AccountExpirationDate  -lt $Cutoff} -Properties AccountExpirationDate  | Select-Object Name, SamAccountName, AccountExpirationDate
 
 # Explanation:
 # - Get-ADUser: Cmdlet to retrieve Active Directory user accounts
