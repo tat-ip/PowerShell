@@ -19,3 +19,5 @@ Get-ADUser -Filter {Enabled -eq $true -and  AccountExpirationDate  -lt $Cutoff} 
 # - Select-Object: Selects specific properties (Name, SamAccountName, AccountExpirationDate) for display
 
 # Note: Replace the filter conditions as needed for your specific environment.
+
+#Challenge: Create a script to find all users have never logged on into the system.
