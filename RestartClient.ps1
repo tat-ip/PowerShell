@@ -12,3 +12,9 @@ $properties = @{'Computername' = $computer;
     Write-Output $obj | Where-Object ProductType -EQ 1 | Restart-Computer -Force
     }
  
+    # Create task in Schedule, In Action Pane, input powershell.exe -executionpolicy bypass c:\scripts\restartclient.ps1
+
+    #In General Pane, Check with highest privileges
+    #Trigger Pane, add a daily task on 12:00 AM
+
+    # Need to exclude the workstation from rebooting OR run the schedule at DC or server.
